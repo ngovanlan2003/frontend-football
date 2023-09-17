@@ -27,7 +27,7 @@ const Header = (props) => {
 
     const getCats = async () => {
         let access_token = localStorage.getItem("access_token")
-        if(access_token) {
+        if(access_token && props.detailUser.idUser) {
             const decoded = jwt_decode(access_token)
 
             props.getAllCart(decoded?.id)
